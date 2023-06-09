@@ -21,7 +21,7 @@
 	<div class="page-content">
 		<div class="container-fluid">
 			<header class="section-header">
-				<div class="tbl">
+				<div class="tbl"></div>
 					<div class="tbl-row">
 						<div class="tbl-cell">
 							<h3>Nuevo Ticket</h3>
@@ -33,79 +33,48 @@
 					</div>
 				</div>
 			</header>
+
 			<div class="box-typical box-typical-padding">
-				<p>
-					Examplesd of standard form controls supported in an example form layout. Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt</code>; elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing. Labels in horizontal form require <code>.control-label</code> class.
-				</p>
 
-				<h5 class="m-t-lg with-border">Horizontal Inputs</h5>
+				<h5 class="m-t-lg with-border">Ingresar Requerimiento</h5>
 
-				<form>
-					<div class="form-group row">
-						<label class="col-sm-2 form-control-label">Text</label>
-						<div class="col-sm-10">
-							<p class="form-control-static"><input type="text" class="form-control" id="inputPassword" placeholder="Text"></p>
+				<div class="row">
+					<form method="post" id="ticket_from">
+
+						<input type="hidden" id="id_usu" name="id_usu" value="<?php echo $_SESSION["id_usu"] ?>">
+
+						<div class="col-lg-6">
+							<fieldset class="form-group">
+								<label class="form-label semibold" for="id_cat">Categoria</label>
+								<select id="id_cat" name="id_cat" class="form-control"></select>
+							</fieldset>
 						</div>
-					</div>
-					<div class="form-group row">
-						<label class="col-sm-2 form-control-label">Text Disabled</label>
-						<div class="col-sm-10">
-							<p class="form-control-static"><input type="text" disabled class="form-control" id="inputPassword" placeholder="Text Disabled"></p>
+						<div class="col-lg-6">
+							<fieldset class="form-group">
+								<label class="form-label semibold" for="tick_titulo">Titulo</label>
+								<input type="text" class="form-control" id="tick_titulo" name="tick_titulo" placeholder="Ingrese Titulo">
+							</fieldset>
 						</div>
-					</div>
-					<div class="form-group row">
-						<label class="col-sm-2 form-control-label">Text Readonly</label>
-						<div class="col-sm-10">
-							<p class="form-control-static"><input type="text" readonly class="form-control" id="inputPassword" placeholder="Text Readonly"></p>
+						<div class="col-lg-12">
+							<fieldset class="form-group">
+								<label class="form-label semibold" for="tick_descrip">Descripción</label>
+								<div class="summernote-theme-1">
+									<textarea id="tick_descrip" name="tick_descrip" class="summernote" name="name"> </textarea>
+								</div>		
+							</fieldset>
 						</div>
-					</div>
-					<div class="form-group row">
-						<label for="inputPassword" class="col-sm-2 form-control-label">Password</label>
-						<div class="col-sm-10">
-							<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+						<div class="col-lg-12">
+							<button type="submit" name="acction" value="add" class="btn btn-rounded btn-inline btn-primary">Guardar</button>
 						</div>
-					</div>
-					<div class="form-group row">
-						<label for="exampleSelect" class="col-sm-2 form-control-label">Select</label>
-						<div class="col-sm-10">
-							<select id="exampleSelect" class="form-control">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="exampleSelect2" class="col-sm-2 form-control-label">Multiple select</label>
-						<div class="col-sm-10">
-							<select multiple class="form-control" id="exampleSelect2">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="exampleSelect" class="col-sm-2 form-control-label">Textarea</label>
-						<div class="col-sm-10">
-							<textarea rows="4" class="form-control" placeholder="Textarea"></textarea>
-						</div>
-					</div>
-				</form>
-	</div>
+					</form>
+				</div><!--.row-->
+
+			</div>
 		</div>
 	</div>
-	
-
-
-  
-	
-	
+		
 	<?php require_once("../MainJS/js.php");?>
-	<script type="text/javascript" src="home.js"></script>
+	<script type="text/javascript" src="nuevoticket.js"></script>
 
 </body>
 </html>
